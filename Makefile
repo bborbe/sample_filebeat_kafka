@@ -30,6 +30,7 @@ nginx: log
 	docker run \
 	--net=kafka \
 	-p 8080:80 \
+	-v $$(pwd)/nginx.conf:/etc/nginx/conf.d/default.conf \
 	-v $$(pwd)/log:/var/log/nginx \
 	nginx:1.15.5	
 
